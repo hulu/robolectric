@@ -17,6 +17,11 @@ public class ShadowMediaRouter {
   private List<MediaRouter.RouteInfo> mRoutes = new ArrayList<MediaRouter.RouteInfo>();
 
   @Implementation
+  public void addRoute(MediaRouter.RouteInfo info) {
+    mRoutes.add(info);
+  }
+
+  @Implementation
   public int getRouteCount() {
     return mRoutes.size();
   }
