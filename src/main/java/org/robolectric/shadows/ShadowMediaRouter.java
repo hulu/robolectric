@@ -30,4 +30,9 @@ public class ShadowMediaRouter {
   public int getRouteCount() {
     return mRoutes.size();
   }
+
+  @Implementation
+  void removeRouteAt(int routeIndex) {
+    mRoutes.remove(routeIndex);
+  }
 }
