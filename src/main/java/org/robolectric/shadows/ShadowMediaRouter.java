@@ -27,6 +27,17 @@ public class ShadowMediaRouter {
   }
 
   @Implementation
+  public void clearUserRoutes() {
+    for (int i = 0; i < mRoutes.size(); i++) {
+      final MediaRouter.RouteInfo info = mRoutes.get(i);
+      if (info instanceof MediaRouter.UserRouteInfo) {
+        removeRouteAt(i);
+        i--;
+      }
+    }
+  }
+
+  @Implementation
   public int getRouteCount() {
     return mRoutes.size();
   }
